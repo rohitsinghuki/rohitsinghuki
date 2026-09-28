@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RohitSinghuki - Official Study Blog & Portal</title>
-  <!-- Tailwind CSS -->
+  <title>RohitSinghuki - उत्तराखण्ड प्रतियोगी परीक्षा पोर्टल</title>
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
     .page { display: none; }
@@ -17,11 +19,11 @@
   <!-- Top Announcement Bar -->
   <div class="bg-gradient-to-r from-blue-700 via-indigo-700 to-sky-600 text-white text-xs py-2 px-4 flex justify-between items-center shadow-sm">
     <span class="flex items-center gap-1.5 font-medium truncate">
-      📢 RohitSinghuki: उत्तराखण्ड प्रतियोगी परीक्षाओं हेतु फ्री स्टडी ब्लॉग, नोट्स एवं वीडियो हब
+      ⭐ RohitSinghuki: UKPSC, UKSSSC एवं उत्तराखण्ड प्रतियोगी परीक्षाओं हेतु समर्पित डिजिटल मंच
     </span>
-    <div id="authStatusBadge" class="text-xs bg-black/30 px-2.5 py-0.5 rounded-full font-mono">
-      Student Access
-    </div>
+    <span class="text-xs bg-black/30 px-2.5 py-0.5 rounded-full font-mono flex-shrink-0">
+      2026 Batch Active
+    </span>
   </div>
 
   <!-- Header / Navbar -->
@@ -33,27 +35,20 @@
         </div>
         <div>
           <h1 class="font-bold text-lg leading-tight">RohitSinghuki</h1>
-          <p class="text-xs text-blue-600 font-semibold">Free Education & Study Blog</p>
+          <p class="text-xs text-blue-600 font-semibold">Study Notes & Test Hub</p>
         </div>
       </div>
 
+      <!-- Desktop Navigation Menu -->
       <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
         <button onclick="showPage('home')" class="px-3 py-2 rounded-lg hover:text-blue-600">Home</button>
-        <button onclick="showPage('blogs')" class="px-3 py-2 rounded-lg hover:text-blue-600">Blogs / Articles</button>
+        <button onclick="showPage('blogs')" class="px-3 py-2 rounded-lg hover:text-blue-600">Blogs / लेख</button>
         <button onclick="showPage('notes')" class="px-3 py-2 rounded-lg hover:text-blue-600">Notes / PDF</button>
+        <button onclick="showPage('tests')" class="px-3 py-2 rounded-lg hover:text-blue-600">Online Mock Test</button>
         <button onclick="showPage('videos')" class="px-3 py-2 rounded-lg hover:text-blue-600">Videos</button>
         <button onclick="showPage('contact')" class="px-3 py-2 rounded-lg hover:text-blue-600">Contact</button>
-        
-        <!-- Admin Panel Tab (Visible only to Admin) -->
-        <button id="adminTabBtn" onclick="showPage('admin')" class="hidden bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-3 py-1.5 rounded-lg text-xs ml-2 shadow">
-          ✍️ Post New Blog / PDF
-        </button>
-
-        <button id="loginNavBtn" onclick="openLoginModal()" class="ml-3 bg-blue-600 hover:bg-blue-700 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold shadow">
-          Admin Login
-        </button>
-        <button id="logoutNavBtn" onclick="logoutAdmin()" class="hidden ml-2 bg-rose-500 hover:bg-rose-600 text-white px-2.5 py-1.5 rounded-lg text-xs font-semibold">
-          Logout
+        <button onclick="showPage('customizer')" class="ml-3 bg-amber-500 hover:bg-amber-600 text-slate-950 px-3.5 py-1.5 rounded-lg text-xs font-bold shadow">
+          ⚙️ Content Editor
         </button>
       </nav>
     </div>
@@ -64,19 +59,19 @@
 
     <!-- 1. HOME PAGE -->
     <div id="page-home" class="page active space-y-8">
-      <!-- Hero Banner -->
+      <!-- Hero Section -->
       <div class="rounded-3xl bg-gradient-to-r from-blue-700 via-indigo-800 to-slate-900 text-white p-8 md:p-14 shadow-xl space-y-4">
-        <span class="bg-white/20 text-xs px-3 py-1 rounded-full font-semibold">100% Free Study Materials</span>
-        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">RohitSinghuki Study Portal</h2>
+        <span class="bg-white/20 text-xs px-3 py-1 rounded-full font-semibold">Uttarakhand Competitive Exams</span>
+        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">RohitSinghuki Digital Learning Hub</h2>
         <p class="text-blue-100 max-w-2xl text-sm md:text-base leading-relaxed">
-          यहाँ आपको उत्तराखण्ड की सभी प्रतियोगी परीक्षाओं (UKPSC, UKSSSC आदि) के लिए परीक्षा-उपयोगी ब्लॉग, हाई-क्वालिटी हैंडराइटिंग PDF नोट्स और वीडियो लेक्चर्स पूरी तरह निशुल्क मिलेंगे।
+          उत्तराखण्ड की सभी प्रतियोगी परीक्षाओं के लिए विषयवार हस्तलिखित नोट्स, ऑनलाइन मॉक टेस्ट और विशेष स्टडी ब्लॉग्स।
         </p>
         <div class="flex flex-wrap gap-3 pt-2">
-          <button onclick="showPage('blogs')" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-6 py-2.5 rounded-xl shadow">
-            नवीनतम ब्लॉग पढ़ें ✍️
-          </button>
-          <button onclick="showPage('notes')" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-6 py-2.5 rounded-xl">
+          <button onclick="showPage('notes')" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-6 py-2.5 rounded-xl shadow">
             PDF नोट्स डाउनलोड करें 📚
+          </button>
+          <button onclick="showPage('tests')" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-6 py-2.5 rounded-xl">
+            मॉक टेस्ट दें ⏱️
           </button>
         </div>
       </div>
@@ -84,40 +79,29 @@
       <!-- Quick Metrics -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="bg-white border border-slate-200 p-5 rounded-2xl shadow-sm text-center">
-          <p id="statsBlogCount" class="text-2xl font-black text-blue-600">0</p>
-          <p class="text-xs text-slate-500 font-semibold">स्टडी ब्लॉग्स</p>
+          <p class="text-2xl font-black text-blue-600">100%</p>
+          <p class="text-xs text-slate-500 font-semibold">निशुल्क अध्ययन सामग्री</p>
         </div>
         <div class="bg-white border border-slate-200 p-5 rounded-2xl shadow-sm text-center">
-          <p id="statsNotesCount" class="text-2xl font-black text-indigo-600">0</p>
-          <p class="text-xs text-slate-500 font-semibold">PDF नोट्स</p>
+          <p id="totalNotesBadge" class="text-2xl font-black text-indigo-600">3</p>
+          <p class="text-xs text-slate-500 font-semibold">हैंडराइटिंग नोट्स (PDF)</p>
         </div>
         <div class="bg-white border border-slate-200 p-5 rounded-2xl shadow-sm text-center">
-          <p id="statsVideosCount" class="text-2xl font-black text-emerald-600">0</p>
-          <p class="text-xs text-slate-500 font-semibold">वीडियो लेक्चर्स</p>
+          <p class="text-2xl font-black text-emerald-600">Live</p>
+          <p class="text-xs text-slate-500 font-semibold">टाइमर आधारित टेस्ट</p>
         </div>
         <div class="bg-white border border-slate-200 p-5 rounded-2xl shadow-sm text-center">
-          <p class="text-2xl font-black text-amber-500">Free</p>
-          <p class="text-xs text-slate-500 font-semibold">सभी छात्रों के लिए</p>
+          <p class="text-2xl font-black text-amber-500">24x7</p>
+          <p class="text-xs text-slate-500 font-semibold">एक्सेस सुविधा</p>
         </div>
-      </div>
-
-      <!-- Recent Blogs Preview -->
-      <div class="space-y-4 pt-4">
-        <div class="flex justify-between items-center">
-          <h3 class="text-xl font-black">ताज़ा ब्लॉग एवं महत्वपूर्ण अपडेट्स</h3>
-          <button onclick="showPage('blogs')" class="text-xs text-blue-600 font-bold hover:underline">सभी देखें &rarr;</button>
-        </div>
-        <div id="homeBlogsList" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
       </div>
     </div>
 
     <!-- 2. BLOGS / ARTICLES PAGE -->
     <div id="page-blogs" class="page space-y-6">
-      <div class="flex justify-between items-center border-b pb-4">
-        <div>
-          <h2 class="text-2xl font-black">एजुकेशनल ब्लॉग्स एवं लेख</h2>
-          <p class="text-xs text-slate-500">परीक्षा रणनीति, करंट अफेयर्स और विषयवार विश्लेषण</p>
-        </div>
+      <div>
+        <h2 class="text-2xl font-black">स्टडी ब्लॉग्स एवं परीक्षा मार्गदर्शन</h2>
+        <p class="text-xs text-slate-500">परीक्षा रणनीति, महत्वपूर्ण विश्लेषण और करंट अफेयर्स</p>
       </div>
       <div id="blogsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </div>
@@ -138,174 +122,162 @@
     <!-- 4. NOTES / PDF PAGE -->
     <div id="page-notes" class="page space-y-6">
       <div>
-        <h2 class="text-2xl font-black">स्टडी नोट्स एवं PDF संग्रह</h2>
-        <p class="text-xs text-slate-500">कोई भी विद्यार्थी 1-क्लिक में फ्री डाउनलोड कर सकता है</p>
+        <h2 class="text-2xl font-black">हस्तलिखित नोट्स एवं PDF लाइब्रेरी</h2>
+        <p class="text-xs text-slate-500">सीधे डाउनलोड करें और ऑफलाइन अध्ययन करें</p>
       </div>
       <div id="notesContainer" class="grid grid-cols-1 md:grid-cols-3 gap-5"></div>
     </div>
 
-    <!-- 5. VIDEOS PAGE -->
+    <!-- 5. ONLINE MCQ TESTS -->
+    <div id="page-tests" class="page space-y-6">
+      <div>
+        <h2 class="text-2xl font-black">ऑनलाइन मॉक टेस्ट (MCQ Portal)</h2>
+        <p class="text-xs text-slate-500">समय सीमा के साथ वास्तविक परीक्षा अनुभव प्राप्त करें</p>
+      </div>
+      <div id="testsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </div>
+
+    <!-- ACTIVE TEST RUNNER -->
+    <div id="page-test-runner" class="page space-y-6 max-w-2xl mx-auto">
+      <div class="bg-white border border-slate-200 p-4 rounded-2xl shadow-sm flex justify-between items-center">
+        <span id="activeTestTitle" class="font-bold text-sm">MCQ Test</span>
+        <div class="text-rose-600 font-mono font-bold bg-rose-50 border border-rose-200 px-3 py-1 rounded-xl text-sm">
+          समय शेष: <span id="testTimer">02:00</span>
+        </div>
+      </div>
+      <div id="quizQuestionBox" class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-4"></div>
+      <button onclick="submitTest()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow">
+        सबमिट करें ✅
+      </button>
+    </div>
+
+    <!-- 6. VIDEOS -->
     <div id="page-videos" class="page space-y-6">
       <div>
-        <h2 class="text-2xl font-black">वीडियो लेक्चर्स हब</h2>
-        <p class="text-xs text-slate-500">यूट्यूब और विषयवार कक्षाएं</p>
+        <h2 class="text-2xl font-black">वीडियो लेक्चर्स</h2>
+        <p class="text-xs text-slate-500">यूट्यूब और विशेष अध्ययन व्याख्यान</p>
       </div>
       <div id="videosContainer" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
     </div>
 
-    <!-- 6. CONTACT PAGE -->
+    <!-- 7. CONTACT -->
     <div id="page-contact" class="page max-w-lg mx-auto space-y-4">
-      <h2 class="text-2xl font-black text-center">संपर्क करें (Contact RohitSinghuki)</h2>
+      <h2 class="text-2xl font-black text-center">संपर्क करें</h2>
       <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-3">
         <div>
-          <label class="text-xs font-semibold text-slate-500 block mb-1">आपका नाम</label>
-          <input type="text" id="contactName" class="w-full border border-slate-200 p-2.5 rounded-xl text-sm" placeholder="नाम लिखें">
+          <label class="text-xs font-semibold text-slate-500 block mb-1">नाम</label>
+          <input type="text" id="contactName" class="w-full border border-slate-200 p-2.5 rounded-xl text-sm" placeholder="अपना नाम">
         </div>
         <div>
-          <label class="text-xs font-semibold text-slate-500 block mb-1">ईमेल या व्हाट्सएप नंबर</label>
-          <input type="text" id="contactContact" class="w-full border border-slate-200 p-2.5 rounded-xl text-sm" placeholder="नंबर दर्ज करें">
+          <label class="text-xs font-semibold text-slate-500 block mb-1">मोबाइल नंबर</label>
+          <input type="text" id="contactPhone" class="w-full border border-slate-200 p-2.5 rounded-xl text-sm" placeholder="नंबर">
         </div>
         <div>
           <label class="text-xs font-semibold text-slate-500 block mb-1">संदेश</label>
-          <textarea id="contactMsg" class="w-full border border-slate-200 p-2.5 rounded-xl text-sm" rows="3" placeholder="संदेश लिखें..."></textarea>
+          <textarea id="contactMsg" class="w-full border border-slate-200 p-2.5 rounded-xl text-sm" rows="3" placeholder="संदेश..."></textarea>
         </div>
-        <button onclick="saveContactMsg()" class="w-full bg-blue-600 text-white font-bold py-2.5 rounded-xl text-sm">
+        <button onclick="alert('संदेश भेज दिया गया है!')" class="w-full bg-blue-600 text-white font-bold py-2.5 rounded-xl text-sm">
           संदेश भेजें
         </button>
       </div>
     </div>
 
-    <!-- 7. ADMIN DASHBOARD (POST BLOGS, PDFS & VIDEOS) -->
-    <div id="page-admin" class="page space-y-8">
-      <div class="bg-amber-50 border border-amber-200 p-5 rounded-2xl flex justify-between items-center">
+    <!-- 8. CONTENT EDITOR & EXPORTER (LIVE CUSTOMIZER) -->
+    <div id="page-customizer" class="page space-y-8">
+      <div class="bg-amber-50 border border-amber-200 p-5 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
-          <h3 class="font-black text-slate-900 text-xl">✍️ RohitSinghuki Content Manager</h3>
-          <p class="text-xs text-slate-600">यहाँ से आप नए ब्लॉग आर्टिकल लिख सकते हैं, नोट्स और वीडियो सीधे पोस्ट कर सकते हैं।</p>
+          <h3 class="font-black text-slate-900 text-xl">⚙️ रोहित सिंह यूकेआई - लाइव कंटेंट एडिटर</h3>
+          <p class="text-xs text-slate-600">यहाँ से आप नए ब्लॉग, नोट्स, और वीडियो लिंक जोड़ सकते हैं, और पूरी अपडेटेड फाइल डाउनलोड कर सकते हैं।</p>
         </div>
+        <button onclick="exportFullHTML()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 shadow">
+          📥 Download Updated index.html
+        </button>
       </div>
 
-      <!-- Form 1: Add New Blog Article -->
-      <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-4">
-        <h4 class="font-bold text-base text-blue-600 border-b pb-2">📝 नया ब्लॉग / आर्टिकल लिखें</h4>
-        <div class="space-y-3">
-          <div>
-            <label class="text-xs font-semibold text-slate-500 block mb-1">ब्लॉग का शीर्षक (Title)</label>
-            <input type="text" id="newBlogTitle" placeholder="जैसे: UKPSC परीक्षा की तैयारी कैसे करें?" class="w-full border p-2.5 rounded-xl text-sm outline-none">
-          </div>
-          <div>
-            <label class="text-xs font-semibold text-slate-500 block mb-1">कैटेगरी</label>
-            <input type="text" id="newBlogCategory" placeholder="जैसे: Strategy / Uttarakhand GK / Current Affairs" class="w-full border p-2.5 rounded-xl text-sm outline-none">
-          </div>
-          <div>
-            <label class="text-xs font-semibold text-slate-500 block mb-1">ब्लॉग का कंटेंट (पूरा विवरण)</label>
-            <textarea id="newBlogContent" rows="6" placeholder="यहाँ पूरा आर्टिकल या नोट्स लिखें..." class="w-full border p-2.5 rounded-xl text-sm outline-none"></textarea>
-          </div>
-          <button onclick="postNewBlog()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2.5 rounded-xl text-xs shadow">
-            🚀 ब्लॉग पब्लिश करें
-          </button>
-        </div>
+      <!-- Add Blog -->
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-3">
+        <h4 class="font-bold text-base text-blue-600 border-b pb-2">📝 नया ब्लॉग आर्टिकल जोड़ें</h4>
+        <input type="text" id="newBlogTitle" placeholder="ब्लॉग शीर्षक" class="w-full border p-2.5 rounded-xl text-sm">
+        <input type="text" id="newBlogCategory" placeholder="कैटेगरी (उदा. Uttarakhand GK, Strategy)" class="w-full border p-2.5 rounded-xl text-sm">
+        <textarea id="newBlogContent" rows="4" placeholder="पूरा कंटेंट..." class="w-full border p-2.5 rounded-xl text-sm"></textarea>
+        <button onclick="addCustomBlog()" class="bg-blue-600 text-white font-bold px-5 py-2 rounded-xl text-xs">ब्लॉग जोड़ें</button>
       </div>
 
-      <!-- Form 2: Add New PDF / Note -->
-      <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-4">
+      <!-- Add Note -->
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-3">
         <h4 class="font-bold text-base text-indigo-600 border-b pb-2">📚 नया Note / PDF जोड़ें</h4>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-          <input type="text" id="newNoteTitle" placeholder="नोट का नाम (जैसे: उत्तराखंड नदी तंत्र)" class="border p-2.5 rounded-xl text-sm outline-none">
-          <input type="text" id="newNoteCategory" placeholder="कैटेगरी (UK-GK / Hindi)" class="border p-2.5 rounded-xl text-sm outline-none">
-          <input type="text" id="newNoteLink" placeholder="Google Drive Link" class="border p-2.5 rounded-xl text-sm outline-none">
+          <input type="text" id="newNoteTitle" placeholder="नोट का नाम" class="border p-2.5 rounded-xl text-sm">
+          <input type="text" id="newNoteCategory" placeholder="कैटेगरी" class="border p-2.5 rounded-xl text-sm">
+          <input type="text" id="newNoteLink" placeholder="Google Drive / PDF Link" class="border p-2.5 rounded-xl text-sm">
         </div>
-        <button onclick="addNewNote()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs shadow">
-          + PDF Note पब्लिश करें
-        </button>
+        <button onclick="addCustomNote()" class="bg-indigo-600 text-white font-bold px-5 py-2 rounded-xl text-xs">Note जोड़ें</button>
       </div>
 
-      <!-- Form 3: Add Video -->
-      <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-4">
-        <h4 class="font-bold text-base text-rose-600 border-b pb-2">▶️ नया वीडियो लेक्चर जोड़ें</h4>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-          <input type="text" id="newVideoTitle" placeholder="वीडियो का नाम" class="border p-2.5 rounded-xl text-sm outline-none">
-          <input type="text" id="newVideoDesc" placeholder="छोटा विवरण" class="border p-2.5 rounded-xl text-sm outline-none">
-          <input type="text" id="newVideoUrl" placeholder="YouTube Link (Embed ya Watch)" class="border p-2.5 rounded-xl text-sm outline-none">
-        </div>
-        <button onclick="addNewVideo()" class="bg-rose-600 hover:bg-rose-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs shadow">
-          + वीडियो पब्लिश करें
-        </button>
-      </div>
-
-      <!-- Manage Existing Items -->
+      <!-- Add Video -->
       <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-3">
-        <h4 class="font-bold text-base">मौजूदा ब्लॉग्स को डिलीट / मैनेज करें</h4>
-        <div id="adminBlogsList" class="divide-y divide-slate-100"></div>
+        <h4 class="font-bold text-base text-rose-600 border-b pb-2">▶️ नया वीडियो जोड़ें</h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <input type="text" id="newVideoTitle" placeholder="वीडियो शीर्षक" class="border p-2.5 rounded-xl text-sm">
+          <input type="text" id="newVideoDesc" placeholder="विवरण" class="border p-2.5 rounded-xl text-sm">
+          <input type="text" id="newVideoUrl" placeholder="YouTube Link" class="border p-2.5 rounded-xl text-sm">
+        </div>
+        <button onclick="addCustomVideo()" class="bg-rose-600 text-white font-bold px-5 py-2 rounded-xl text-xs">वीडियो जोड़ें</button>
       </div>
     </div>
 
   </main>
 
-  <!-- LOGIN MODAL -->
-  <div id="loginModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl relative">
-      <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 font-bold text-lg">✕</button>
-      <h3 class="text-lg font-black text-center">एडमिन लॉगिन (RohitSinghuki)</h3>
-      <p class="text-xs text-slate-500 text-center">नया ब्लॉग या नोट्स अपलोड करने के लिए लॉगिन करें।</p>
-      
-      <div class="space-y-3">
-        <div>
-          <label class="text-xs font-semibold text-slate-600">Email ID</label>
-          <input type="email" id="adminEmail" placeholder="admin@rohitsingh.uki" class="w-full border border-slate-200 p-2.5 rounded-xl text-sm mt-1">
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-slate-600">Password</label>
-          <input type="password" id="adminPass" placeholder="••••••••" class="w-full border border-slate-200 p-2.5 rounded-xl text-sm mt-1">
-        </div>
-      </div>
-      <button onclick="handleAdminLogin()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-xl text-sm shadow">
-        लॉगिन करें
-      </button>
-      <div class="bg-slate-50 p-2.5 rounded-xl text-xs text-slate-500 border border-slate-100">
-        <p class="font-bold text-slate-700">🔑 डिफ़ॉल्ट क्रेडेंशियल्स:</p>
-        <p>Email: <span class="text-blue-600 font-mono">admin@rohitsingh.uki</span></p>
-        <p>Pass: <span class="text-blue-600 font-mono">admin123</span></p>
-      </div>
-    </div>
-  </div>
-
   <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400">
-    © 2026 RohitSinghuki Study Portal • सभी नोट्स व ब्लॉग विद्यार्थियों के लिए निशुल्क उपलब्ध हैं।
+    © 2026 RohitSinghuki Digital Hub • सर्वाधिकार सुरक्षित
   </footer>
 
-  <!-- SCRIPT LOGIC -->
+  <!-- JAVASCRIPT APP LOGIC -->
   <script>
-    // 1. Data Store
-    let isAdmin = JSON.parse(localStorage.getItem('rsu_is_admin') || 'false');
-
-    let blogs = JSON.parse(localStorage.getItem('rsu_blogs') || JSON.stringify([
+    let blogs = [
       {
         id: 1,
-        title: "उत्तराखण्ड UKPSC 2026: 3 महीने में सम्पूर्ण सिलेबस कैसे कवर करें?",
+        title: "UKPSC / UKSSSC 2026: सम्पूर्ण पाठ्यक्रम एवं रणनीति",
         category: "Strategy",
         date: "28/09/2026",
-        content: "उत्तराखण्ड लोक सेवा आयोग की परीक्षाओं में सफलता के लिए निरंतर अध्ययन और प्रामाणिक पुस्तकों का चयन अत्यंत महत्वपूर्ण है।\n\n1. परीक्षा पैटर्न को समझें: सामान्य अध्ययन और उत्तराखण्ड सामान्य ज्ञान के भारांक को समझें।\n2. नोट्स बनाएं: स्वयं के संक्षिप्त नोट्स रिवीजन में सबसे अधिक सहायक होते हैं।\n3. मॉक टेस्ट: साप्ताहिक टेस्ट देकर अपनी गति और सटीकता को परखें।"
+        content: "उत्तराखण्ड प्रतियोगी परीक्षाओं की तैयारी के लिए सबसे पहले विस्तृत सिलेबस और पूर्व वर्षों के प्रश्नों का विश्लेषण करें। नोट्स बनाएं और नियमित मॉक टेस्ट दें।"
       },
       {
         id: 2,
-        title: "कत्यूरी राजवंश एवं उत्तराखण्ड का मध्यकालीन इतिहास",
+        title: "कत्यूरी एवं चन्द राजवंश: मुख्य परीक्षा बिंदु",
         category: "Uttarakhand GK",
         date: "27/09/2026",
-        content: "कत्यूरी राजवंश उत्तराखण्ड का प्रथम ऐतिहासिक राजवंश माना जाता है। इनकी राजधानी कार्तिकेयपुर (जोशीमठ) थी और बाद में बैजनाथ (बागेश्वर) स्थानांतरित हुई।"
+        content: "कत्यूरी राजवंश की स्थापना एवं चन्द राजाओं के ताम्रपत्र अभिलेखों से जुड़े महत्वपूर्ण प्रश्न हर परीक्षा में पूछे जाते हैं।"
       }
-    ]));
+    ];
 
-    let notes = JSON.parse(localStorage.getItem('rsu_notes') || JSON.stringify([
+    let notes = [
       { id: 1, title: "उत्तराखण्ड का सम्पूर्ण इतिहास (टिहरी राजवंश)", category: "UK-GK", link: "#" },
-      { id: 2, title: "उत्तराखण्ड भूगोल, नदियाँ एवं राष्ट्रीय उद्यान", category: "UK-GK", link: "#" },
-      { id: 3, title: "भारतीय संविधान एवं राज्यव्यवस्था क्विक रिवीजन", category: "GS", link: "#" }
-    ]));
+      { id: 2, title: "उत्तराखण्ड नदी तंत्र, भूगोल एवं राष्ट्रीय उद्यान", category: "UK-GK", link: "#" },
+      { id: 3, title: "भारतीय संविधान एवं राज्यव्यवस्था क्विक रिवीजन कैप्सूल", category: "GS", link: "#" }
+    ];
 
-    let videos = JSON.parse(localStorage.getItem('rsu_videos') || JSON.stringify([
-      { id: 1, title: "उत्तराखण्ड नदी तंत्र (पंचप्रयाग विश्लेषण)", desc: "अलकनंदा एवं भागीरथी का सम्पूर्ण प्रवाह तंत्र", url: "https://www.youtube.com" }
-    ]));
+    let videos = [
+      { id: 1, title: "उत्तराखण्ड नदी तंत्र (पंचप्रयाग विश्लेषण)", desc: "अलकनंदा एवं भागीरथी का सम्पूर्ण प्रवाह", url: "https://youtube.com" }
+    ];
 
-    // Navigation Switcher
+    let tests = [
+      {
+        id: 1,
+        title: "UKPSC / UKSSSC Mock Test 1",
+        duration: 120,
+        questions: [
+          { q: "उत्तराखण्ड राज्य की स्थापना किस तारीख को हुई थी?", options: ["9 नवंबर 2000", "1 नवंबर 2000", "15 नवंबर 2000"], correct: 0 },
+          { q: "टिहरी रियासत का भारत संघ में विलय कब हुआ?", options: ["1947", "1949", "1950"], correct: 1 },
+          { q: "जिम कॉर्बेट नेशनल पार्क किस वर्ष स्थापित हुआ?", options: ["1932", "1936", "1950"], correct: 1 }
+        ]
+      }
+    ];
+
+    let activeTest = null;
+    let userAnswers = {};
+    let timerInterval = null;
+
     function showPage(pageId) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       const target = document.getElementById('page-' + pageId);
@@ -313,83 +285,8 @@
       window.scrollTo(0, 0);
     }
 
-    // Modal Control
-    function openLoginModal() {
-      document.getElementById('loginModal').classList.remove('hidden');
-    }
-    function closeLoginModal() {
-      document.getElementById('loginModal').classList.add('hidden');
-    }
-
-    // Admin Auth
-    function handleAdminLogin() {
-      const email = document.getElementById('adminEmail').value.trim();
-      const pass = document.getElementById('adminPass').value.trim();
-
-      if (email === "admin@rohitsingh.uki" && pass === "admin123") {
-        isAdmin = true;
-        localStorage.setItem('rsu_is_admin', 'true');
-        closeLoginModal();
-        updateUI();
-        showPage('admin');
-        alert("स्वागत है रोहित सिंह जी! आप नए ब्लॉग और नोट्स पोस्ट कर सकते हैं।");
-      } else {
-        alert("गलत ईमेल या पासवर्ड!");
-      }
-    }
-
-    function logoutAdmin() {
-      isAdmin = false;
-      localStorage.setItem('rsu_is_admin', 'false');
-      updateUI();
-      showPage('home');
-    }
-
-    function updateUI() {
-      const adminTab = document.getElementById('adminTabBtn');
-      const loginBtn = document.getElementById('loginNavBtn');
-      const logoutBtn = document.getElementById('logoutNavBtn');
-      const badge = document.getElementById('authStatusBadge');
-
-      if (isAdmin) {
-        adminTab.classList.remove('hidden');
-        loginBtn.classList.add('hidden');
-        logoutBtn.classList.remove('hidden');
-        badge.innerText = "👑 Admin: Rohit Singh";
-      } else {
-        adminTab.classList.add('hidden');
-        loginBtn.classList.remove('hidden');
-        logoutBtn.classList.add('hidden');
-        badge.innerText = "Student Access (Free)";
-      }
-
-      document.getElementById('statsBlogCount').innerText = blogs.length;
-      document.getElementById('statsNotesCount').innerText = notes.length;
-      document.getElementById('statsVideosCount').innerText = videos.length;
-    }
-
-    // Render Blogs
     function renderBlogs() {
       const container = document.getElementById('blogsContainer');
-      const homeList = document.getElementById('homeBlogsList');
-      const adminList = document.getElementById('adminBlogsList');
-
-      // Home preview (First 2 blogs)
-      homeList.innerHTML = blogs.slice(0, 2).map(b => `
-        <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-3 flex flex-col justify-between">
-          <div class="space-y-2">
-            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">${b.category}</span>
-            <h4 class="font-bold text-base text-slate-900 leading-snug">${b.title}</h4>
-            <p class="text-xs text-slate-500 line-clamp-2">${b.content}</p>
-          </div>
-          <div class="pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
-            <span class="text-slate-400">${b.date}</span>
-            <button onclick="readSingleBlog(${b.id})" class="text-blue-600 font-bold hover:underline">पूरा पढ़ें &rarr;</button>
-          </div>
-        </div>
-      `).join('');
-
-      // All Blogs page
       container.innerHTML = blogs.map(b => `
         <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-3 flex flex-col justify-between">
           <div class="space-y-2">
@@ -405,73 +302,21 @@
           </div>
         </div>
       `).join('');
-
-      // Admin Management List
-      adminList.innerHTML = blogs.map(b => `
-        <div class="py-2.5 flex justify-between items-center text-sm">
-          <div>
-            <p class="font-semibold">${b.title}</p>
-            <span class="text-xs text-slate-400">${b.category} • ${b.date}</span>
-          </div>
-          <button onclick="deleteBlog(${b.id})" class="text-rose-500 font-bold hover:bg-rose-50 px-2.5 py-1 rounded text-xs">हटाएं 🗑️</button>
-        </div>
-      `).join('');
     }
 
     function readSingleBlog(id) {
       const blog = blogs.find(b => b.id === id);
       if (!blog) return;
-
       document.getElementById('readBlogCategory').innerText = blog.category;
       document.getElementById('readBlogTitle').innerText = blog.title;
       document.getElementById('readBlogDate').innerText = blog.date;
       document.getElementById('readBlogBody').innerText = blog.content;
-
       showPage('read-blog');
     }
 
-    function postNewBlog() {
-      const title = document.getElementById('newBlogTitle').value.trim();
-      const cat = document.getElementById('newBlogCategory').value.trim() || 'General';
-      const content = document.getElementById('newBlogContent').value.trim();
-
-      if (!title || !content) {
-        alert("कृपया शीर्षक और पूरा कंटेंट भरें!");
-        return;
-      }
-
-      const newB = {
-        id: Date.now(),
-        title,
-        category: cat,
-        content,
-        date: new Date().toLocaleDateString('hi-IN')
-      };
-
-      blogs.unshift(newB);
-      localStorage.setItem('rsu_blogs', JSON.stringify(blogs));
-      document.getElementById('newBlogTitle').value = "";
-      document.getElementById('newBlogCategory').value = "";
-      document.getElementById('newBlogContent').value = "";
-      
-      renderBlogs();
-      updateUI();
-      alert("✅ नया ब्लॉग सफलतापूर्वक पब्लिश हो गया है!");
-      showPage('blogs');
-    }
-
-    function deleteBlog(id) {
-      if (confirm("क्या आप इस ब्लॉग को हटाना चाहते हैं?")) {
-        blogs = blogs.filter(b => b.id !== id);
-        localStorage.setItem('rsu_blogs', JSON.stringify(blogs));
-        renderBlogs();
-        updateUI();
-      }
-    }
-
-    // Render Notes
     function renderNotes() {
       const container = document.getElementById('notesContainer');
+      document.getElementById('totalNotesBadge').innerText = notes.length;
       container.innerHTML = notes.map(n => `
         <div class="bg-white border border-slate-200 p-5 rounded-2xl shadow-sm flex flex-col justify-between">
           <div class="space-y-2">
@@ -479,7 +324,7 @@
             <h4 class="font-bold text-sm text-slate-900">${n.title}</h4>
           </div>
           <div class="pt-4 border-t border-slate-100 mt-4 flex justify-between items-center text-xs">
-            <span class="text-slate-400">PDF File</span>
+            <span class="text-slate-400">PDF Document</span>
             <a href="${n.link}" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3 py-1.5 rounded-lg shadow">
               डाउनलोड 📥
             </a>
@@ -488,27 +333,6 @@
       `).join('');
     }
 
-    function addNewNote() {
-      const title = document.getElementById('newNoteTitle').value.trim();
-      const cat = document.getElementById('newNoteCategory').value.trim() || 'General';
-      const link = document.getElementById('newNoteLink').value.trim() || '#';
-
-      if (!title) {
-        alert("नोट का नाम लिखें");
-        return;
-      }
-
-      notes.unshift({ id: Date.now(), title, category: cat, link });
-      localStorage.setItem('rsu_notes', JSON.stringify(notes));
-      document.getElementById('newNoteTitle').value = "";
-      document.getElementById('newNoteCategory').value = "";
-      document.getElementById('newNoteLink').value = "";
-      renderNotes();
-      updateUI();
-      alert("✅ Note जुड़ गया!");
-    }
-
-    // Render Videos
     function renderVideos() {
       const container = document.getElementById('videosContainer');
       container.innerHTML = videos.map(v => `
@@ -525,47 +349,115 @@
       `).join('');
     }
 
-    function addNewVideo() {
+    function renderTests() {
+      const container = document.getElementById('testsContainer');
+      container.innerHTML = tests.map(t => `
+        <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-3">
+          <h3 class="text-lg font-bold">${t.title}</h3>
+          <p class="text-xs text-slate-500">कुल प्रश्न: ${t.questions.length} • समय: ${Math.floor(t.duration / 60)} मिनट</p>
+          <button onclick="startTest(${t.id})" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-5 py-2 rounded-xl text-xs shadow">
+            टेस्ट शुरू करें 🚀
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function startTest(testId) {
+      activeTest = tests.find(t => t.id === testId);
+      if (!activeTest) return;
+      userAnswers = {};
+      showPage('test-runner');
+      document.getElementById('activeTestTitle').innerText = activeTest.title;
+      const box = document.getElementById('quizQuestionBox');
+      box.innerHTML = activeTest.questions.map((q, qIndex) => `
+        <div class="space-y-2 pb-4 border-b border-slate-100">
+          <p class="font-bold text-sm">${qIndex + 1}. ${q.q}</p>
+          <div class="space-y-1">
+            ${q.options.map((opt, optIndex) => `
+              <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 text-sm cursor-pointer hover:bg-slate-50">
+                <input type="radio" name="q_${qIndex}" onchange="userAnswers[${qIndex}] =${optIndex}">
+                <span>${opt}</span>
+              </label>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+
+      let timeLeft = activeTest.duration;
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        let min = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+        let sec = String(timeLeft % 60).padStart(2, '0');
+        document.getElementById('testTimer').innerText = `${min}:${sec}`;
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          submitTest();
+        }
+      }, 1000);
+    }
+
+    function submitTest() {
+      clearInterval(timerInterval);
+      let score = 0;
+      activeTest.questions.forEach((q, i) => {
+        if (userAnswers[i] === q.correct) score++;
+      });
+      alert(`टेस्ट समाप्त! आपका स्कोर: ${score} / ${activeTest.questions.length}`);
+      showPage('tests');
+    }
+
+    function addCustomBlog() {
+      const title = document.getElementById('newBlogTitle').value.trim();
+      const category = document.getElementById('newBlogCategory').value.trim() || 'General';
+      const content = document.getElementById('newBlogContent').value.trim();
+      if (!title || !content) return alert("शीर्षक और कंटेंट लिखें!");
+      blogs.unshift({ id: Date.now(), title, category, content, date: new Date().toLocaleDateString('hi-IN') });
+      renderBlogs();
+      alert("ब्लॉग जुड़ गया!");
+      showPage('blogs');
+    }
+
+    function addCustomNote() {
+      const title = document.getElementById('newNoteTitle').value.trim();
+      const category = document.getElementById('newNoteCategory').value.trim() || 'General';
+      const link = document.getElementById('newNoteLink').value.trim() || '#';
+      if (!title) return alert("नोट का नाम लिखें!");
+      notes.unshift({ id: Date.now(), title, category, link });
+      renderNotes();
+      alert("Note जुड़ गया!");
+      showPage('notes');
+    }
+
+    function addCustomVideo() {
       const title = document.getElementById('newVideoTitle').value.trim();
       const desc = document.getElementById('newVideoDesc').value.trim();
       const url = document.getElementById('newVideoUrl').value.trim();
-
-      if (!title) {
-        alert("वीडियो का नाम लिखें");
-        return;
-      }
-
+      if (!title) return alert("वीडियो का नाम लिखें!");
       videos.unshift({ id: Date.now(), title, desc, url });
-      localStorage.setItem('rsu_videos', JSON.stringify(videos));
-      document.getElementById('newVideoTitle').value = "";
-      document.getElementById('newVideoDesc').value = "";
-      document.getElementById('newVideoUrl').value = "";
       renderVideos();
-      updateUI();
-      alert("✅ वीडियो जुड़ गया!");
+      alert("वीडियो जुड़ गया!");
+      showPage('videos');
     }
 
-    function saveContactMsg() {
-      const name = document.getElementById('contactName').value.trim();
-      const contact = document.getElementById('contactContact').value.trim();
-      const msg = document.getElementById('contactMsg').value.trim();
-
-      if (!name || !msg) {
-        alert("कृपया नाम और संदेश दोनों भरें");
-        return;
-      }
-
-      alert(`धन्यवाद ${name}! आपका संदेश रोहित सिंह जी को भेज दिया गया है।`);
-      document.getElementById('contactName').value = "";
-      document.getElementById('contactContact').value = "";
-      document.getElementById('contactMsg').value = "";
+    // Export current state as a downloadable HTML file
+    function exportFullHTML() {
+      const fullDoc = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+      const blob = new Blob([fullDoc], { type: "text/html" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "index.html";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      alert("✅ अद्यतन index.html डाउनलोड हो गई है! इसे अपने GitHub repository में commit कर दें।");
     }
 
     // Init
-    updateUI();
     renderBlogs();
     renderNotes();
     renderVideos();
+    renderTests();
   </script>
 </body>
 </html>
